@@ -3,7 +3,7 @@ package com.parking.parkinglot.entities;
 import jakarta.persistence.*;
 
 @Entity
-public class car {
+public class Car {
     private Long id;
 
     public void setId(Long id) {
