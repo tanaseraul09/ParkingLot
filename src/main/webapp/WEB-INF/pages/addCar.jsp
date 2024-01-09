@@ -23,6 +23,7 @@
                         <option value="${user.id}">${user.username}</option>
                     </c:forEach>
                 </select>
+                <br>
                 <button class="btn btn-primary btn-lg" type="submit" >Save</button>
             </div>
         </div>

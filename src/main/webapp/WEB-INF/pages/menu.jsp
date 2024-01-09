@@ -1,7 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
@@ -10,22 +7,22 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
-        < class="navbar-nav me-auto mb-2 mb-md-0">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link
-            ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/about.jsp' ? ' active' : ''}"
-               aria-current="page" href="${pageContext.request.contextPath}/about.jsp">About</a>
+            <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf
+                           ("/")   )  eq '/about.jsp' ? ' active' : ''}" aria-current="page" href="${pageContext.request.contextPath}/about.jsp">About
+            </a>
           </li>
           <li class="nav-item">
             <c:if test="${pageContext.request.isUserInRole('READ_CARS')}">
-            <a class="nav-link" href="${pageContext.request.contextPath}/Cars">Cars</a>
-          </c:if>
+              <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf
+                            ("/")   )  eq '/cars.jsp' ? ' active' : ''}" aria-current="page" href="${pageContext.request.contextPath}/Cars">Cars</a>
+            </c:if>
           </li>
           <li class="nav-item">
-            <c:if test="${pageContext.request.isUserInRole('READ_Users')}">
-            <a class="nav-link
-            ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq 'Users' ? ' active' : ''}"
-            aria-current="page" href="${pageContext.request.contextPath}/Users">Users</a>
+            <c:if test="${pageContext.request.isUserInRole('READ_USERS')}">
+              <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf
+                            ("/")   )  eq '/Users.jsp' ? ' active' : ''}" aria-current="page" href="${pageContext.request.contextPath}/Users">Users</a>
             </c:if>
           </li>
           <li class="nav-item">
