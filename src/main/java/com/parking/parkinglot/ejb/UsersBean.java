@@ -67,4 +67,12 @@ public class UsersBean {
 
         return UserDtoList;
     }
+    public Collection<String> findUsernamesByUserIDs(Collection<Long>userIds){
+        List<String> usernames =
+                entityManager.createQuery("SELECT U.username FROM User u WHERE u.id IN :userIds",String.class)
+                        .setParameter("userIds",userIds)
+                        .getResultList();
+        return usernames;
+
+    }
 }
